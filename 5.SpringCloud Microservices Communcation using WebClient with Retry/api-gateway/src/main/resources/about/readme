@@ -1,0 +1,5 @@
+This application is an api gateway which provides routes to Employee service, Department Service and
+Organization service.
+
+
+
