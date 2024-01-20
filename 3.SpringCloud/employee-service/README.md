@@ -2,13 +2,13 @@
 
 ## Overview
 
-The Employee Service is a microservice designed to store and retrieve employee details from a database. The API documentation is available at [http://localhost:8081/swagger-ui/index.html]. The service's routes are configured using the API Gateway microservice. It is also registered with the Service Registry, hosted on the Service Registry microservice. Configuration parameters are externalized using a GitHub repository: [Employee Service Config](https://github.com/Shreeraksha1006/config-server-repo.git/employee-service.properties), and managed by the Spring Cloud Config Server. The service is integrated with the Spring Cloud Bus, using RabbitMQ for dynamic configuration updates.
+The Employee Service is a microservice designed to store and retrieve employee details from a database. The API documentation is available [here](http://localhost:8081/swagger-ui/index.html). The service's routes are configured using the API Gateway microservice, and it's registered with the Service Registry hosted on the Service Registry microservice. Configuration parameters are externalized using a GitHub repository: [Employee Service Config](https://github.com/Shreeraksha1006/config-server-repo.git/employee-service.properties), and managed by the Spring Cloud Config Server. The service is integrated with the Spring Cloud Bus, using RabbitMQ for dynamic configuration updates.
 
 ## Features
 
 - **Database Interaction:** The Employee Service efficiently stores and retrieves employee details from a database.
 
-- **API Documentation:** Detailed API documentation is available at [http://localhost:8081/swagger-ui/index.html] for easy integration and testing.
+- **API Documentation:** Detailed API documentation is available [here](http://localhost:8081/swagger-ui/index.html) for easy integration and testing.
 
 - **API Gateway Integration:** Routes are configured using the API Gateway microservice, providing a centralized entry point to the microservices ecosystem.
 
@@ -23,9 +23,9 @@ The Employee Service is a microservice designed to store and retrieve employee d
 Before running the Employee Service, ensure the following prerequisites are met:
 
 - Java (JDK) version 17.0 or higher
-- Springboot version 3.0 or higher
+- Spring Boot version 3.0 or higher
 - Docker installed and running (for RabbitMQ)
-- SQL scripts to be executed to create schemeas and tables
+- SQL scripts to be executed to create schemas and tables
 - Config-server application should be running.
 
 ## Setup
@@ -33,13 +33,13 @@ Before running the Employee Service, ensure the following prerequisites are met:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/Shreeraksha1006/employee-service.git
+    git clone https://github.com/Shreeraksha1006/Springboot-microservice-projects.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd employee-service
+    cd 3.SpringCloud/employee-service
     ```
 
 3. Build the project using Maven:
@@ -50,11 +50,12 @@ Before running the Employee Service, ensure the following prerequisites are met:
 
 ## Configuration
 
-- Configurations are externalized and managed by the Spring Cloud Config Server. The configuration repository is hosted on GitHub: [Employee Service Config](https://github.com/Shreeraksha1006/config-server-repo.git/employee-service.properties).
+- Configurations are externalized and managed by the Spring Cloud Config Server. The configuration repository is hosted on GitHub: [Employee Service Config](https://github.com/Shreeraksha1006/config-server-repo.git).
+  File: `employee-service.properties`
 
 - The Spring Cloud Config Server should be properly configured to fetch configurations from the GitHub repository.
 
-- Spring Cloud Bus with RabbitMQ is integrated for dynamic configuration updates.
+- Spring Cloud Bus with RabbitMQ is integrated for dynamic configuration updates. It can be accessed with the following endpoint: [http://localhost:8081/actuator/busrefresh](http://localhost:8081/actuator/busrefresh).
 
 ## Running the Employee Service
 
@@ -64,7 +65,7 @@ Before running the Employee Service, ensure the following prerequisites are met:
     docker run -d --name rabbitmq -p 5672:5672 rabbitmq:latest
     ```
 
-2. Run the Employee Service:
+2. Run the Employee Service: 
 
     ```bash
     mvn spring-boot:run
