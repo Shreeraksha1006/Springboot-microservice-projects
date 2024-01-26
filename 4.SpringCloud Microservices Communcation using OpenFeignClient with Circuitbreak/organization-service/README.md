@@ -41,7 +41,7 @@ Before running the organization Service, ensure the following prerequisites are 
 2. Navigate to the project directory:
 
     ```bash
-    cd 3.SpringCloud/organization-service
+    cd 4.SpringCloud Microservices Communcation using OpenFeignClient with Circuitbreak/organization-service
     ```
 
 3. Build the project using Maven:
@@ -79,3 +79,4 @@ Before running the organization Service, ensure the following prerequisites are 
 4. Access the Swagger Documentation:
 
    Open a web browser and navigate to [http://localhost:8084/swagger-ui/index.html](http://localhost:8084/swagger-ui/index.html) to view the API documentation.
+
